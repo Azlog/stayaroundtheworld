@@ -1,0 +1,790 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  color: #555555;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding-bottom: 100px;
+  /* Same height as footer */
+}
+
+h1, h2, h3, h4, h5 {
+  color: #394352;
+}
+
+.content-wrapper {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+.content-wrapper.error {
+  padding: 40px 0;
+}
+
+header {
+  position: relative;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+header .content-wrapper {
+  display: flex;
+}
+
+header h1, header img {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  font-size: 20px;
+  margin: 0;
+  padding: 24px 0;
+}
+
+header nav {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav a {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #555555;
+  padding: 10px 10px;
+  margin: 0 10px;
+}
+
+header nav a:hover {
+  border-bottom: 1px solid #aaa;
+}
+
+header .link-icons {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+header .link-icons .search i {
+  font-size: 18px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+header .link-icons .search input {
+  display: none;
+  border: 0;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 10px 0;
+  width: 200px;
+  outline: none;
+  margin-right: 10px;
+}
+
+header .link-icons .responsive-toggle {
+  display: none;
+}
+
+header .link-icons a {
+  position: relative;
+  text-decoration: none;
+  color: #394352;
+  padding: 0 10px;
+}
+
+header .link-icons a:hover {
+  color: #4e5c70;
+}
+
+header .link-icons a i {
+  font-size: 18px;
+}
+
+header .link-icons a span {
+  display: inline-block;
+  text-align: center;
+  background-color: #63748e;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 12px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: -4px;
+  right: 2px;
+}
+
+main .featured {
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main .featured h2 {
+  display: inline-block;
+  margin: 0;
+  width: 1050px;
+  font-family: Rockwell, Courier Bold, Courier, Georgia, Times, Times New Roman, serif;
+  font-size: 68px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+}
+
+main .featured p {
+  display: inline-block;
+  margin: 0;
+  width: 1050px;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+main .recentlyadded h2 {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+main .recentlyadded .products, main .products .products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px 0 0 0;
+}
+
+main .recentlyadded .products .product, main .products .products-wrapper .product {
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+  width: 25%;
+  padding-bottom: 60px;
+}
+
+main .recentlyadded .products .product img, main .products .products-wrapper .product img {
+  transform: scale(1);
+  transition: transform 1s;
+}
+
+main .recentlyadded .products .product .name, main .products .products-wrapper .product .name {
+  display: block;
+  color: #555555;
+  padding: 20px 0 2px 0;
+}
+
+main .recentlyadded .products .product .price, main .products .products-wrapper .product .price {
+  display: block;
+  color: #999999;
+}
+
+main .recentlyadded .products .product .rrp, main .products .products-wrapper .product .rrp {
+  color: #BBBBBB;
+  text-decoration: line-through;
+}
+
+main .recentlyadded .products .product:hover img, main .products .products-wrapper .product:hover img {
+  transform: scale(1.05);
+  transition: transform 1s;
+}
+
+main .recentlyadded .products .product:hover .name, main .products .products-wrapper .product:hover .name {
+  text-decoration: underline;
+}
+
+main > .product {
+  display: flex;
+  padding: 40px 0;
+}
+
+main > .product h1 {
+  font-size: 34px;
+  font-weight: normal;
+  margin: 0;
+  padding: 20px 0 10px 0;
+}
+
+main > .product .product-small-imgs img {
+  border: 1px solid #EEEEEE;
+  cursor: pointer;
+  margin: 20px 12px 0 0;
+}
+
+main > .product .product-small-imgs img.selected {
+  border: 1px solid #c8c8c8;
+}
+
+main > .product .product-wrapper {
+  padding-left: 15px;
+}
+
+main > .product .price {
+  display: block;
+  font-size: 22px;
+  color: #999999;
+}
+
+main > .product .rrp {
+  color: #BBBBBB;
+  text-decoration: line-through;
+  font-size: 22px;
+  padding-left: 5px;
+}
+
+main > .product form {
+  display: flex;
+  flex-flow: column;
+  margin: 40px 0;
+}
+
+main > .product form select, main > .product form input[type="number"] {
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  color: #555555;
+  border-radius: 5px;
+}
+
+main > .product form input[type="submit"] {
+  background: #4e5c70;
+  border: 0;
+  color: #FFFFFF;
+  width: 400px;
+  padding: 12px 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main > .product form input[type="submit"]:hover {
+  background: #434f61;
+}
+
+main > .product form input[type="submit"]:disabled {
+  background: #ddd;
+}
+
+main > .products h1 {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+main > .products .products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+main > .products .products-header p {
+  margin: 0;
+}
+
+main > .products .products-header label {
+  padding-left: 20px;
+}
+
+main > .products .products-header select {
+  padding: 5px;
+  margin-left: 15px;
+  border: 1px solid #ccc;
+  color: #555555;
+  border-radius: 5px;
+}
+
+main > .products .buttons {
+  text-align: right;
+  padding-bottom: 40px;
+}
+
+main > .products .buttons a {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 5px;
+  padding: 12px 20px;
+  border: 0;
+  background: #4e5c70;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+main > .products .buttons a:hover {
+  background: #434f61;
+}
+
+main .cart h1, main .myaccount h1 {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+main .cart table, main .myaccount table {
+  width: 100%;
+}
+
+main .cart table thead td, main .myaccount table thead td {
+  padding: 30px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+main .cart table thead td:last-child, main .myaccount table thead td:last-child {
+  text-align: right;
+}
+
+main .cart table tbody td, main .myaccount table tbody td {
+  padding: 20px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+main .cart table tbody td:last-child, main .myaccount table tbody td:last-child {
+  text-align: right;
+}
+
+main .cart table .img, main .myaccount table .img {
+  width: 80px;
+}
+
+main .cart table .remove, main .myaccount table .remove {
+  color: #777777;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+main .cart table .remove:hover, main .myaccount table .remove:hover {
+  text-decoration: underline;
+}
+
+main .cart table .price, main .myaccount table .price {
+  color: #999999;
+}
+
+main .cart table a, main .myaccount table a {
+  text-decoration: none;
+  color: #555555;
+}
+
+main .cart table input[type="number"], main .myaccount table input[type="number"] {
+  width: 68px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #555555;
+  border-radius: 5px;
+}
+
+main .cart .subtotal, main .cart .shipping, main .cart .discount, main .myaccount .subtotal, main .myaccount .shipping, main .myaccount .discount {
+  text-align: right;
+  padding: 30px 0 0 0;
+}
+
+main .cart .subtotal .text, main .cart .shipping .text, main .cart .discount .text, main .myaccount .subtotal .text, main .myaccount .shipping .text, main .myaccount .discount .text {
+  padding-right: 40px;
+  font-size: 16px;
+}
+
+main .cart .subtotal .price, main .cart .shipping .price, main .cart .discount .price, main .myaccount .subtotal .price, main .myaccount .shipping .price, main .myaccount .discount .price {
+  font-size: 16px;
+  color: #999999;
+}
+
+main .cart .shipping, main .cart .discount, main .myaccount .shipping, main .myaccount .discount {
+  padding: 10px 0 0 0;
+}
+
+main .cart .shipping-methods, main .cart .discount-code, main .myaccount .shipping-methods, main .myaccount .discount-code {
+  display: flex;
+  flex-flow: column;
+  align-self: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 40px 0;
+  max-width: 320px;
+}
+
+main .cart .shipping-methods h2, main .cart .discount-code h2, main .myaccount .shipping-methods h2, main .myaccount .discount-code h2 {
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+main .cart .shipping-methods .shipping-method, main .cart .discount-code .shipping-method, main .myaccount .shipping-methods .shipping-method, main .myaccount .discount-code .shipping-method {
+  padding-top: 10px;
+}
+
+main .cart .discount-code, main .myaccount .discount-code {
+  padding: 20px 0;
+}
+
+main .cart .discount-code input, main .myaccount .discount-code input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  color: #555555;
+  border-radius: 5px;
+}
+
+main .cart .discount-code .result, main .myaccount .discount-code .result {
+  padding-top: 10px;
+}
+
+main .cart .total, main .myaccount .total {
+  text-align: right;
+  padding: 20px 0 40px 0;
+}
+
+main .cart .total .text, main .myaccount .total .text {
+  padding-right: 40px;
+  font-size: 18px;
+}
+
+main .cart .total .price, main .myaccount .total .price {
+  font-size: 18px;
+  color: #999999;
+}
+
+main .cart .buttons, main .myaccount .buttons {
+  text-align: right;
+  padding-bottom: 40px;
+}
+
+main .cart .buttons input[type="submit"], main .myaccount .buttons input[type="submit"] {
+  margin: 0 0 5px 5px;
+  padding: 12px 20px;
+  border: 0;
+  background: #4e5c70;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+main .cart .buttons input[type="submit"]:hover, main .myaccount .buttons input[type="submit"]:hover {
+  background: #434f61;
+}
+
+main .placeorder h1 {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+main .placeorder p {
+  text-align: center;
+}
+
+main .checkout h1, main .myaccount h1 {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  padding: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+}
+
+main .checkout form, main .myaccount form {
+  width: 600px;
+  display: flex;
+  flex-flow: wrap;
+  padding-bottom: 40px;
+}
+
+main .checkout form h2, main .myaccount form h2 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 20px;
+  padding: 50px 0 20px 0;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+main .checkout form h2:first-child, main .myaccount form h2:first-child {
+  padding: 20px 0 20px 0;
+}
+
+main .checkout form label, main .myaccount form label {
+  display: block;
+  padding: 15px 0 10px 0;
+}
+
+main .checkout form input, main .checkout form select, main .myaccount form input, main .myaccount form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+main .checkout form input[type="submit"], main .checkout form button, main .myaccount form input[type="submit"], main .myaccount form button {
+  width: 100%;
+  border: 0;
+  margin-top: 40px;
+  padding: 14px 20px;
+  background: #4e5c70;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+main .checkout form input[type="submit"]:hover, main .checkout form button:hover, main .myaccount form input[type="submit"]:hover, main .myaccount form button:hover {
+  background: #434f61;
+}
+
+main .checkout form .row1, main .checkout form .row2, main .myaccount form .row1, main .myaccount form .row2 {
+  width: 50%;
+  display: inline-block;
+}
+
+main .checkout form .row1, main .myaccount form .row1 {
+  padding-right: 10px;
+}
+
+main .checkout form .row2, main .myaccount form .row2 {
+  padding-left: 10px;
+}
+
+main .checkout .paypal, main .checkout .stripe, main .myaccount .paypal, main .myaccount .stripe {
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+main .checkout .paypal button, main .checkout .stripe button, main .myaccount .paypal button, main .myaccount .stripe button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px 7px 20px;
+  background-color: #FFC439;
+  width: inherit;
+}
+
+main .checkout .paypal button:hover, main .checkout .stripe button:hover, main .myaccount .paypal button:hover, main .myaccount .stripe button:hover {
+  background-color: #f3bb37;
+}
+
+main .checkout .stripe, main .myaccount .stripe {
+  padding-bottom: 0;
+}
+
+main .checkout .stripe button, main .myaccount .stripe button {
+  padding: 14px 20px;
+  background-color: #4381cf;
+}
+
+main .checkout .stripe button:hover, main .myaccount .stripe button:hover {
+  background-color: #3374c6;
+}
+
+main .myaccount form {
+  width: 100%;
+}
+
+main .myaccount h2 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 20px;
+  padding: 30px 0 20px 0;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+main .myaccount table {
+  padding-bottom: 40px;
+}
+
+main .myaccount table tr:last-child td {
+  border-bottom: 0;
+}
+
+main .myaccount table a {
+  font-size: 14px;
+  color: #de0000;
+}
+
+main .myaccount table a:hover {
+  color: #ab0000;
+}
+
+main .myaccount .login-register {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+main .myaccount .login-register h1 {
+  text-align: left;
+  padding-top: 15px;
+}
+
+main .myaccount .login-register .login {
+  width: 100%;
+  border-right: 1px solid #f6f6f6;
+  padding-right: 45px;
+}
+
+main .myaccount .login-register .register {
+  width: 100%;
+  padding-left: 45px;
+}
+
+main p.error {
+  color: red;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #EEEEEE;
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* Responsive CSS below */
+@media screen and (max-width: 1050px) {
+  .rhide {
+    display: none;
+  }
+  .content-wrapper {
+    width: 100%;
+    padding: 0 10px;
+  }
+  header {
+    justify-content: space-between;
+  }
+  header h1 {
+    font-size: 16px;
+    flex-basis: auto;
+  }
+  header nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 1px);
+    width: 100%;
+    background-color: #FFFFFF;
+  }
+  header nav a {
+    display: block;
+    padding: 10px 10px;
+    margin: 0;
+    border-bottom: 1px solid #EEEEEE;
+  }
+  header .link-icons {
+    display: inline-flex;
+    width: 100px;
+  }
+  header .link-icons .responsive-toggle {
+    display: block;
+  }
+  main .recentlyadded .products, main .products .products-wrapper {
+    justify-content: center;
+  }
+  main .recentlyadded .products .product, main .products .products-wrapper .product {
+    width: auto;
+  }
+  main .featured {
+    height: 300px;
+  }
+  main .featured h2 {
+    font-size: 48px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  main .featured p {
+    font-size: 22px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  main > .products .products-header {
+    flex-flow: column;
+  }
+  main > .products .products-header p {
+    padding-bottom: 10px;
+  }
+  main > .products .products-header form {
+    display: flex;
+    flex-flow: column;
+  }
+  main > .products .products-header form label {
+    padding-top: 15px;
+  }
+  main > .product {
+    padding: 0 10px;
+    flex-flow: column;
+  }
+  main > .product .product-imgs {
+    padding: 0 10px;
+  }
+  main > .product .product-imgs .product-img-large {
+    width: 100%;
+    height: auto;
+  }
+  main > .product .product-imgs .product-small-imgs .product-img-small {
+    width: 50px;
+    height: 50px;
+  }
+  main > .product form input[type="number"], main > .product form input[type="submit"], main > .product form select {
+    width: 100%;
+  }
+  main > .product .product-wrapper {
+    padding: 0;
+  }
+  main .cart table input[type="number"] {
+    width: 40px;
+  }
+  main .checkout form, main .myaccount form {
+    width: 100%;
+  }
+  main .myaccount .login-register {
+    flex-flow: column;
+  }
+  main .myaccount .login-register .login {
+    border-right: 0;
+    padding: 10px;
+  }
+  main .myaccount .login-register .register {
+    padding: 10px;
+  }
+}
